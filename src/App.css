@@ -1,0 +1,4 @@
+input[type=range] {
+  -webkit-appearance: none;
+  background: #DDDDDD;
+}
