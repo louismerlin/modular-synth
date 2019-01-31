@@ -1,14 +1,13 @@
 import { h, Component } from 'preact'
+import Knob from './Knob'
 import './App.css'
-
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     const audioContext = new AudioContext();
-    this.state = { audioContext }
-    this.handleChange = this.handleChange.bind(this)
+    this.state = { audioContext, oscillatorNode: {}, gainNode: {} }
   }
 
   componentDidMount() {
@@ -18,20 +17,17 @@ export default class App extends Component {
     const gainNode = audioContext.createGain();
     const finish = audioContext.destination;
 
-    oscillatorNode.type = 'square';
-    oscillatorNode.frequency.setValueAtTime(220, audioContext.currentTime); // value in hertz
+    //oscillatorNode.type = 'square';
+    //oscillatorNode.frequency.setValueAtTime(220, audioContext.currentTime); // value in hertz
 
     oscillatorNode.connect(gainNode)
     gainNode.connect(finish)
 
-    this.setState({ oscillatorNode })
+    gainNode.gain.value = 0.01
 
-    //oscillatorNode.start()
-  }
+    this.setState({ oscillatorNode, gainNode })
 
-  handleChange(e) {
-    const freq = e.target.value;
-    this.state.oscillatorNode.frequency.setValueAtTime(freq, this.state.audioContext.currentTime)
+    oscillatorNode.start()
   }
 
   componentWillUnmount() {
@@ -41,7 +37,8 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <input type="range" min="110" max="880" value="440" onChange={this.handleChange}/>
+        <Knob type='frequency' param={this.state.oscillatorNode.frequency} />
+        <Knob type='gain' param={this.state.gainNode.gain} />
       </div>
     )
   }
