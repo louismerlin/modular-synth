@@ -15,25 +15,39 @@ const paramTypes = {
 export default class Knob extends Component {
   constructor(props) {
     super(props)
+    const properties = paramTypes[props.type] || {}
+    this.state = {
+      range: properties.maxValue - properties.minValue,
+      properties
+    }
     this.handleMouseMove = this.handleMouseMove.bind(this)
   }
 
   handleMouseMove(e) {
     if (e.buttons) {
-      const { param, type } = this.props
-      const properties = paramTypes[type]
-      const range = properties.maxValue - properties.minValue
-      let newValue = param.value + e.movementX * range / 1000
+      const { param } = this.props
+      const { range, properties } = this.state
+      let newValue = param.value - e.movementY * range / 1000
       if (newValue > properties.maxValue) newValue = properties.maxValue
       if (newValue < properties.minValue) newValue = properties.minValue
       param.value = newValue
+      this.forceUpdate()
     }
   }
 
-  render({ param }) {
+  render({ param }, { range }) {
     param = param || {}
+    const transform = `rotate(${ param.value * 300 / range - 150 }deg)`
     return (
-      <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
+      <div class='control'>
+        <div class='knob'>
+          <svg class='knob' style={{ transform }}>
+            <circle cx="40" cy="40" r="40" stroke="black" stroke-width="1" fill="white" />
+            <rect x="40" width="2" height="30" fill="black"/>
+          </svg>
+          <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
+        </div>
+      </div>
     )
   }
 }

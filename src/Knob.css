@@ -1,6 +1,32 @@
-.knob {
+div.control {
+  flex: 1 0 auto;
+}
+
+div.knob {
+  position: relative;
+  height: 80px;
+  width: 80px;
+}
+
+svg.knob {
+  height: 80px;
+  width: 80px;
+  overflow: visible;
+  transform: rotate(50deg);
+  transform-origin: 40px 40px;
+  shape-rendering: geometricPrecision;
+}
+
+input.knob {
   -webkit-user-select: none; /* Safari */        
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
+  cursor: grab;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
 }

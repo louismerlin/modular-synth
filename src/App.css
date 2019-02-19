@@ -1,4 +1,12 @@
-input[type=range] {
-  -webkit-appearance: none;
-  background: #DDDDDD;
+html body {
+  font-family: sans-serif;
+}
+
+.knobs {
+  display: flex;
+  flex-direction: column;
+  width: 140px;
+  align-items: center;
+  border: solid 2px black;
+  padding-bottom: 20px;
 }

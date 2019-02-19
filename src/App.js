@@ -23,7 +23,7 @@ export default class App extends Component {
     oscillatorNode.connect(gainNode)
     gainNode.connect(finish)
 
-    gainNode.gain.value = 0.01
+    gainNode.gain.value = 0
 
     this.setState({ oscillatorNode, gainNode })
 
@@ -37,8 +37,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Knob type='frequency' param={this.state.oscillatorNode.frequency} />
-        <Knob type='gain' param={this.state.gainNode.gain} />
+        <div class='knobs'>
+          <h2>sin</h2>
+          <h3>frequency</h3>
+          <Knob type='frequency' param={this.state.oscillatorNode.frequency} />
+          <h3>amplitude</h3>
+          <Knob type='gain' param={this.state.gainNode.gain} />
+        </div>
       </div>
     )
   }
