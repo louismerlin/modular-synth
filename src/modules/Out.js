@@ -2,49 +2,40 @@ import { h, Component } from 'preact'
 import { audioContext } from '../App'
 import Module from './Module'
 import Knob from '../Knob'
-import { SocketOutput } from '../Sockets'
+import { SocketInput } from '../Sockets'
 
-class Oscilator extends Component {
+export default class extends Component {
   constructor(props) {
     super(props)
-    this.state = { oscillatorNode: {} }
+    this.state = { gainNode: {} }
   }
   componentDidMount() {
-    const oscillatorNode = audioContext.createOscillator()
     const gainNode = audioContext.createGain()
     const finish = audioContext.destination
 
     //oscillatorNode.type = 'square';
     //oscillatorNode.frequency.setValueAtTime(220, audioContext.currentTime); // value in hertz
 
-    oscillatorNode.connect(gainNode)
     gainNode.connect(finish)
 
     gainNode.gain.value = 0.1
 
-    this.setState({ oscillatorNode, gainNode })
-
-    oscillatorNode.start()
+    this.setState({ gainNode })
   }
 
-  render(_, { oscillatorNode }) {
+  render(_, { gainNode }) {
     return (
       <Module>
-        <h2>sine</h2>
+        <h2>out</h2>
         <div class='subset'>
-          <h3>frequency</h3>
-          <Knob type='frequency' param={oscillatorNode.frequency} />
+          <h3>gain</h3>
+          <Knob type='gain' param={gainNode.gain} />
         </div>
         <div class='subset'>
-          <h4>out</h4>
-          <SocketOutput node={oscillatorNode} />
+          <h4>in</h4>
+          <SocketInput param={gainNode.gain} />
         </div>
       </Module>
     )
   }
-}
-
-const Sine = props => <Oscilator type='sine' {...props} />
-export {
-  Sine
 }

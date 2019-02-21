@@ -1,5 +1,6 @@
 div.control {
-  flex: 1 0 auto;
+  height: 80px;
+  width: 80px;
 }
 
 div.knob {

@@ -2,6 +2,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  text-align: center;
   border: solid 2px black;
-  padding: 20px;
+  padding: 10px;
+  height: 400px;
+}
+
+.subset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }

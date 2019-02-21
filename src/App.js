@@ -1,23 +1,23 @@
-import { h, Component } from 'preact'
+import { h, Component, createContext } from 'preact'
 import { Sine } from './modules/Oscilators'
+import Out from './modules/Out'
 import './App.css'
 
-export default class App extends Component {
-  constructor(props) {
-    super(props)
-    const AudioContext = window.AudioContext || window.webkitAudioContext;
-    const audioContext = new AudioContext();
-    this.state = { audioContext }
-  }
+const AudioContext = window.AudioContext || window.webkitAudioContext
+const audioContext = new AudioContext()
 
+export { audioContext }
+
+export default class App extends Component {
   componentWillUnmount() {
-    this.state.audioContext.close()
+    audioContext.close()
   }
 
   render(_, { audioContext }) {
     return (
       <div class='rack'>
-        <Sine audioContext={audioContext} />
+        <Sine />
+        <Out />
       </div>
     )
   }

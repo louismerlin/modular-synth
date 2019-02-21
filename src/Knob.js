@@ -42,7 +42,7 @@ export default class Knob extends Component {
       <div class='control'>
         <div class='knob'>
           <svg class='knob' style={{ transform }}>
-            <circle cx="40" cy="40" r="40" stroke="black" stroke-width="1" fill="white" />
+            <circle cx="40" cy="40" r="40" stroke="black" stroke-width="2" fill="white" />
             <rect x="40" width="2" height="30" fill="black"/>
           </svg>
           <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
