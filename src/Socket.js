@@ -9,7 +9,7 @@ export default class extends Component {
   }
 
   onConnect(down) {
-    connect(this.props.node, this.props.input, this.props.output, down)
+    connect(this.props.node, this.props.input, this.props.output, down, this)
   }
 
   render() {
