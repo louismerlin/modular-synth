@@ -2,6 +2,7 @@ import { h, Component, createContext } from 'preact'
 import { Sine } from './modules/Oscilators'
 import Out from './modules/Out'
 import './App.css'
+import CablesOverlay from './Cables';
 
 const AudioContext = window.AudioContext || window.webkitAudioContext
 const audioContext = new AudioContext()
@@ -13,11 +14,12 @@ export default class App extends Component {
     audioContext.close()
   }
 
-  render(_, { audioContext }) {
+  render() {
     return (
       <div class='rack'>
         <Sine />
         <Out />
+        <CablesOverlay />
       </div>
     )
   }

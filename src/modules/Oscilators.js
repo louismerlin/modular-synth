@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { audioContext } from '../App'
 import Module from './Module'
 import Knob from '../Knob'
-import { SocketOutput } from '../Sockets'
+import Socket from '../Socket'
 
 class Oscilator extends Component {
   constructor(props) {
@@ -11,18 +11,18 @@ class Oscilator extends Component {
   }
   componentDidMount() {
     const oscillatorNode = audioContext.createOscillator()
-    const gainNode = audioContext.createGain()
-    const finish = audioContext.destination
+    //const gainNode = audioContext.createGain()
+    //const finish = audioContext.destination
 
     //oscillatorNode.type = 'square';
     //oscillatorNode.frequency.setValueAtTime(220, audioContext.currentTime); // value in hertz
 
-    oscillatorNode.connect(gainNode)
-    gainNode.connect(finish)
+    //oscillatorNode.connect(gainNode)
+    //gainNode.connect(finish)
 
-    gainNode.gain.value = 0.1
+    //gainNode.gain.value = 0.1
 
-    this.setState({ oscillatorNode, gainNode })
+    this.setState({ oscillatorNode })
 
     oscillatorNode.start()
   }
@@ -37,7 +37,7 @@ class Oscilator extends Component {
         </div>
         <div class='subset'>
           <h4>out</h4>
-          <SocketOutput node={oscillatorNode} />
+          <Socket output node={oscillatorNode} />
         </div>
       </Module>
     )

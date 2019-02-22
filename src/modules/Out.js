@@ -2,7 +2,7 @@ import { h, Component } from 'preact'
 import { audioContext } from '../App'
 import Module from './Module'
 import Knob from '../Knob'
-import { SocketInput } from '../Sockets'
+import Socket from '../Socket'
 
 export default class extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class extends Component {
         </div>
         <div class='subset'>
           <h4>in</h4>
-          <SocketInput param={gainNode.gain} />
+          <Socket input node={gainNode} />
         </div>
       </Module>
     )
