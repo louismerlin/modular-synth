@@ -1,4 +1,5 @@
 import { h, Component, createContext } from 'preact'
+import Clock from './modules/Clock'
 import Oscilator from './modules/Oscilator'
 import Out from './modules/Out'
 import './App.css'
@@ -17,6 +18,7 @@ export default class App extends Component {
   render() {
     return (
       <div class='rack'>
+        <Clock />
         <Oscilator />
         <Out />
         <CablesOverlay />

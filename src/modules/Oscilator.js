@@ -43,20 +43,22 @@ export default class extends Component {
           <Knob type='frequency' param={allFrequencies} />
         </div>
         <div class='subset'>
-          <h4>sine</h4>
-          <Socket output node={sineNode} />
-        </div>
-        <div class='subset'>
-          <h4>square</h4>
-          <Socket output node={squareNode} />
-        </div>
-        <div class='subset'>
-          <h4>triangle</h4>
-          <Socket output node={triangleNode} />
-        </div>
-        <div class='subset'>
-          <h4>saw</h4>
-          <Socket output node={sawNode} />
+          <div class='subset'>
+            <h4>sine</h4>
+            <Socket output node={sineNode} />
+          </div>
+          <div class='subset'>
+            <h4>square</h4>
+            <Socket output node={squareNode} />
+          </div>
+          <div class='subset'>
+            <h4>triangle</h4>
+            <Socket output node={triangleNode} />
+          </div>
+          <div class='subset'>
+            <h4>saw</h4>
+            <Socket output node={sawNode} />
+          </div>
         </div>
       </Module>
     )

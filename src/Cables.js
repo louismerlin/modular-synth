@@ -10,7 +10,7 @@ const link = (method) => {
 
 const connect = (node, input, output, down, component) => {
   if (down) downNode = { node, input, output, component }
-  else if (downNode.node !== {}) {
+  else if (downNode.node !== {} && (downNode.node.clk === node.clk)) {
     // MABYE there should be no else there, a node could be input AND output ?
     if (output && downNode.input) {
       node.connect(downNode.node)

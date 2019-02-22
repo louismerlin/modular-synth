@@ -13,9 +13,6 @@ export default class extends Component {
     const gainNode = audioContext.createGain()
     const finish = audioContext.destination
 
-    //oscillatorNode.type = 'square';
-    //oscillatorNode.frequency.setValueAtTime(220, audioContext.currentTime); // value in hertz
-
     gainNode.connect(finish)
 
     gainNode.gain.value = 0.1

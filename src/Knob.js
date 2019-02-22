@@ -9,6 +9,10 @@ const paramTypes = {
   gain: {
     minValue: 0,
     maxValue: 1
+  },
+  lfo: {
+    minValue: 1/6,
+    maxValue: 6
   }
 }
 
