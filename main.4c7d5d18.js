@@ -27,4 +27,4 @@ parcelRequire=function(e,r,n,t){var i="function"==typeof parcelRequire&&parcelRe
 },{"preact":"OmAK","./modules/Clock":"TMaR","./modules/Envelope":"5xdL","./modules/Oscilator":"vz57","./modules/VCA":"n0Lr","./modules/Out":"7HSt","./App.css":"BDq/","./Cables":"nHLG"}],"epB2":[function(require,module,exports) {
 "use strict";var e=require("preact"),r=t(require("./App"));function t(e){return e&&e.__esModule?e:{default:e}}var u=document.getElementById("app");(0,e.render)((0,e.h)(r.default,null),u,u.lastChild);
 },{"preact":"OmAK","./App":"lY9v"}]},{},["epB2"], null)
-//# sourceMappingURL=modular-synth/main.4c7d5d18.map
+//# sourceMappingURL=main.4c7d5d18.map
