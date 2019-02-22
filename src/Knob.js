@@ -27,23 +27,27 @@ export default class Knob extends Component {
     if (e.buttons) {
       const { param } = this.props
       const { range, properties } = this.state
-      let newValue = param.value - e.movementY * range / 1000
+      let newValue = (param.value || param[0].value) - e.movementY * range / 1000
       if (newValue > properties.maxValue) newValue = properties.maxValue
       if (newValue < properties.minValue) newValue = properties.minValue
-      param.value = newValue
+      if (param instanceof Array) {
+        param.forEach(p => p.value = newValue)
+      } else {
+        param.value = newValue
+      }
       this.forceUpdate()
     }
   }
 
   render({ param }, { range }) {
-    param = param || {}
+    param = (param instanceof Array) ? (param[0] || {}) : (param || {})
     const transform = `rotate(${ param.value * 300 / range - 150 }deg)`
     return (
       <div class='control'>
         <div class='knob'>
           <svg class='knob' style={{ transform }}>
-            <circle cx="40" cy="40" r="40" stroke="black" stroke-width="2" fill="white" />
-            <rect x="40" width="2" height="30" fill="black"/>
+            <circle cx="0.8cm" cy="0.8cm" r="0.8cm" stroke="black" stroke-width="2" fill="white" />
+            <rect x="0.8cm" width="2" height="0.7cm" fill="black"/>
           </svg>
           <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
         </div>

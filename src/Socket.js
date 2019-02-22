@@ -20,7 +20,7 @@ export default class extends Component {
         onMouseUp={() => this.onConnect(false)}
       >
         <svg class='socket'>
-          <circle cx="10" cy="10" r="10" stroke="black" stroke-width="2" fill="white" />
+          <circle cx="3.5mm" cy="3.5mm" r="3.5mm" stroke="black" stroke-width="2" fill="white" />
         </svg>
       </div>
     )

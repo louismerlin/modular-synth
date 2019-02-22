@@ -11,5 +11,5 @@ svg.overlay {
 
 line.cable {
   stroke: rgb(1, 1, 1, 0.2);
-  stroke-width: 20;
+  stroke-width: 7mm;
 }

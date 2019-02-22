@@ -1,5 +1,5 @@
 import { h, Component, createContext } from 'preact'
-import { Sine } from './modules/Oscilators'
+import Oscilator from './modules/Oscilator'
 import Out from './modules/Out'
 import './App.css'
 import CablesOverlay from './Cables';
@@ -17,7 +17,7 @@ export default class App extends Component {
   render() {
     return (
       <div class='rack'>
-        <Sine />
+        <Oscilator />
         <Out />
         <CablesOverlay />
       </div>
