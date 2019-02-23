@@ -22,7 +22,7 @@ export default class App extends Component {
     return (
       <div class='rack'>
         <Clock />
-        <Sequencer />
+        <Sequencer steps={16} />
         <Envelope />
         <Oscilator />
         <VCA />

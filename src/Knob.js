@@ -21,7 +21,7 @@ export default class Knob extends Component {
     super(props)
     const properties = paramTypes[props.type] || {}
     this.state = {
-      range: properties.maxValue - properties.minValue,
+      range: properties.maxValue - properties.minValue || 1,
       properties
     }
     this.handleMouseMove = this.handleMouseMove.bind(this)
@@ -34,8 +34,10 @@ export default class Knob extends Component {
       let newValue = ((typeof param.value === 'number') ? param.value : param[0].value) - e.movementY * range / 1000
       if (newValue > properties.maxValue) newValue = properties.maxValue
       if (newValue < properties.minValue) newValue = properties.minValue
-      if (param instanceof Array) {
-        param.forEach(p => p.value = newValue)
+      if (param.update) {
+        param.update({ knob: { value: newValue } })
+      } else if (param instanceof Array) {
+          param.forEach(p => p.value = newValue)
       } else {
         param.value = newValue
       }
