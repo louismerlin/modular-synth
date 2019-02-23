@@ -4,6 +4,7 @@ import Sequencer from './modules/Sequencer'
 import Envelope from './modules/Envelope'
 import Oscilator from './modules/Oscilator'
 import VCA from './modules/VCA'
+import Filter from './modules/Filter'
 import Out from './modules/Out'
 import './App.css'
 import CablesOverlay from './Cables';
@@ -26,6 +27,7 @@ export default class App extends Component {
         <Envelope />
         <Oscilator />
         <VCA />
+        <Filter />
         <Out />
         <CablesOverlay />
       </div>

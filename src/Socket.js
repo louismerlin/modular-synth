@@ -19,6 +19,8 @@ export default class extends Component {
         class='socket'
         onMouseDown={() => this.onConnect(true)}
         onMouseUp={() => this.onConnect(false)}
+        onTouchStart={() => this.onConnect(true)}
+        onTouchEnd={() => this.onConnect(false)}
       >
         <svg class={`socket ${output ? 'output' : ''}`}>
           <circle cx="3.5mm" cy="3.5mm" r="3.5mm" stroke="black" stroke-width={strokeWidth} fill="#efefef" />

@@ -13,6 +13,14 @@ const paramTypes = {
   lfo: {
     minValue: 1/6,
     maxValue: 6
+  },
+  filterFrequency: {
+    minValue: 0,
+    maxValue: 12000
+  },
+  qFactor: {
+    minValue: 0.0001,
+    maxValue: 20
   }
 }
 
@@ -45,18 +53,18 @@ export default class Knob extends Component {
     }
   }
 
-  render({ param, small }, { range }) {
+  render({ param, small }, { range, properties }) {
     param = (param instanceof Array) ? (param[0] || {}) : (param || {})
-    const transform = `rotate(${ param.value * 300 / range - 150 }deg)`
+    const transform = `rotate(${ (param.value - properties.minValue) * 300 / range - 150 }deg)`
     const classes = `control ${small ? 'small' : ''}`
     const size = small ? '0.4cm' : '0.8cm'
-    const rectHeight = small ? '0.35cm' : '0.7cm'
+    const lineHeight = small ? '0.35cm' : '0.7cm'
     return (
       <div class={classes}>
         <div class='knob'>
           <svg class='knob' style={{ transform }}>
-            <circle cx={size} cy={size} r={size} stroke="black" stroke-width="2" fill="white" />
-            <rect x={size} width="2" height={rectHeight} fill="black"/>
+            <circle cx={size} cy={size} r={size} stroke='black' stroke-width='2' fill='white' />
+            <line x1={size} y1='0' x2={size} y2={lineHeight} stroke-width='2' stroke="black"/>
           </svg>
           <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
         </div>

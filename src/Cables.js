@@ -17,7 +17,11 @@ const connect = (node, input, output, down, component) => {
       addCable(downNode.component, component)
     }
     if (input && downNode.output) {
-      downNode.node.connect(node)
+      if (node instanceof Array) {
+        node.forEach(n => downNode.node.connect(n))
+      } else {
+        downNode.node.connect(node)
+      }
       addCable(downNode.component, component)
     }
   }
