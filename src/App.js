@@ -2,6 +2,7 @@ import { h, Component, createContext } from 'preact'
 import Clock from './modules/Clock'
 import Envelope from './modules/Envelope'
 import Oscilator from './modules/Oscilator'
+import VCA from './modules/VCA'
 import Out from './modules/Out'
 import './App.css'
 import CablesOverlay from './Cables';
@@ -22,6 +23,7 @@ export default class App extends Component {
         <Clock />
         <Envelope />
         <Oscilator />
+        <VCA />
         <Out />
         <CablesOverlay />
       </div>

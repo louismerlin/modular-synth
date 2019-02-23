@@ -31,7 +31,7 @@ export default class Knob extends Component {
     if (e.buttons) {
       const { param } = this.props
       const { range, properties } = this.state
-      let newValue = (param.value || param[0].value) - e.movementY * range / 1000
+      let newValue = ((typeof param.value === 'number') ? param.value : param[0].value) - e.movementY * range / 1000
       if (newValue > properties.maxValue) newValue = properties.maxValue
       if (newValue < properties.minValue) newValue = properties.minValue
       if (param instanceof Array) {
