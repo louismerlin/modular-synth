@@ -1,7 +1,6 @@
 import { h, Component } from 'preact'
 import { audioContext } from '../App'
 import Module from './Module'
-import Knob from '../Knob'
 import Socket from '../Socket'
 
 class VCANode {

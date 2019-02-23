@@ -1,5 +1,4 @@
 import { h, Component } from 'preact'
-import { audioContext } from '../App'
 import Module from './Module'
 import Led from '../Led'
 import Knob from '../Knob'

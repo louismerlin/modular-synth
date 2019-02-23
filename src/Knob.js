@@ -43,15 +43,18 @@ export default class Knob extends Component {
     }
   }
 
-  render({ param }, { range }) {
+  render({ param, small }, { range }) {
     param = (param instanceof Array) ? (param[0] || {}) : (param || {})
     const transform = `rotate(${ param.value * 300 / range - 150 }deg)`
+    const classes = `control ${small ? 'small' : ''}`
+    const size = small ? '0.4cm' : '0.8cm'
+    const rectHeight = small ? '0.35cm' : '0.7cm'
     return (
-      <div class='control'>
+      <div class={classes}>
         <div class='knob'>
           <svg class='knob' style={{ transform }}>
-            <circle cx="0.8cm" cy="0.8cm" r="0.8cm" stroke="black" stroke-width="2" fill="white" />
-            <rect x="0.8cm" width="2" height="0.7cm" fill="black"/>
+            <circle cx={size} cy={size} r={size} stroke="black" stroke-width="2" fill="white" />
+            <rect x={size} width="2" height={rectHeight} fill="black"/>
           </svg>
           <input onMouseMove={this.handleMouseMove} class='knob' type='range'/>
         </div>

@@ -46,16 +46,16 @@ export default class extends Component {
         <div class='subset'>
           <div class='subset'>
             <h3>attack</h3>
-            <Knob type='gain' param={envelopeNode.attack} />
+            <Knob small type='gain' param={envelopeNode.attack} />
           </div>
           <div class='subset'>
             <h3>hold</h3>
-            <Knob type='gain' param={envelopeNode.hold} />
+            <Knob small type='gain' param={envelopeNode.hold} />
           </div>
 
           <div class='subset'>
             <h3>decay</h3>
-            <Knob type='gain' param={envelopeNode.decay} />
+            <Knob small type='gain' param={envelopeNode.decay} />
           </div>
         </div>
         <div class='subset'>

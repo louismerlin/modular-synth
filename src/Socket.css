@@ -2,4 +2,5 @@ svg.socket {
   overflow: visible;
   width: 7mm;
   height: 7mm;
+  border-radius: 1mm;
 }

@@ -1,20 +1,27 @@
-div.control {
+div.small {
+  margin: 0.2cm;
+  height: 0.8cm;
+  width: 0.8cm;
+}
+
+.control {
+  margin: 0.2cm;
   height: 1.6cm;
   width: 1.6cm;
 }
 
 div.knob {
   position: relative;
-  height: 1.6cm;
-  width: 1.6cm;
+  height: inherit;
+  width: inherit
 }
 
 svg.knob {
-  height: 1.6cm;
-  width: 1.6cm;
+  height: inherit;
+  width: inherit;
   overflow: visible;
   transform: rotate(50deg);
-  transform-origin: 0.8cm 0.8cm;
+  transform-origin: 50% 50%;
   shape-rendering: geometricPrecision;
 }
 

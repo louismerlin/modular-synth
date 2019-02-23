@@ -15,4 +15,11 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin: 0 0.2cm;
+}
+
+.h-subset {
+  display: flex;
+  flex-direction: row;
+  margin: 0.2cm 0;
 }
