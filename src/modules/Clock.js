@@ -7,7 +7,7 @@ import Socket from '../Socket'
 
 class ClockNode {
   constructor() {
-    this.clk = true
+    this.trig = true
     this.frequency = {
       value: 1
     }
