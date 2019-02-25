@@ -5,6 +5,7 @@ import Envelope from './modules/Envelope'
 import Oscilator from './modules/Oscilator'
 import VCA from './modules/VCA'
 import Filter from './modules/Filter'
+import Distortion from './modules/Distortion'
 import Out from './modules/Out'
 import './App.css'
 import CablesOverlay from './Cables';
@@ -28,6 +29,7 @@ export default class App extends Component {
         <Oscilator />
         <VCA />
         <Filter />
+        <Distortion />
         <Out />
         <CablesOverlay />
       </div>
