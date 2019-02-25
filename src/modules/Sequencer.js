@@ -39,6 +39,10 @@ class SequencerNode {
     }
   }
 
+  disconnect(node) {
+    this.outs = this.outs.filter(n => n != node)
+  }
+
   update() {
     this.clk()
     this.sendSignal()

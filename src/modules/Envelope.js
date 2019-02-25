@@ -19,6 +19,10 @@ class EnvelopeNode {
     }
   }
 
+  disconnect(node) {
+    this.outs = this.outs.filter(n => n != node)
+  }
+
   update() {
     this.outs.forEach(o => o.update({
       attack: this.attack,

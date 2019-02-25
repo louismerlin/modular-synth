@@ -1,5 +1,7 @@
 svg.socket {
+  z-index: 20;
   overflow: visible;
+  position: relative;
   width: 7mm;
   height: 7mm;
   border-radius: 1mm;

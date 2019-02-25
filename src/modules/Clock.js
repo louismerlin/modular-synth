@@ -23,6 +23,10 @@ class ClockNode {
     }
   }
 
+  disconnect(node) {
+    this.outs = this.outs.filter(n => n != node)
+  }
+
   update() {
     this.beep()
     this.outs.forEach(o => o.update())

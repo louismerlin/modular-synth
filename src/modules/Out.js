@@ -9,6 +9,7 @@ export default class extends Component {
     super(props)
     this.state = { gainNode: {} }
   }
+
   componentDidMount() {
     const gainNode = audioContext.createGain()
     const finish = audioContext.destination

@@ -3,7 +3,8 @@ html body {
 }
 
 .rack {
-  display: flex;
+  display: inline-flex;
+  position: relative;
 }
 
 h1, h2, h3, h4, h5 {
