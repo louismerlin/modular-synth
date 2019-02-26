@@ -3,6 +3,7 @@ import Clock from './modules/Clock'
 import Sequencer from './modules/Sequencer'
 import Envelope from './modules/Envelope'
 import Oscilator from './modules/Oscilator'
+import Noise from './modules/Noise'
 import VCA from './modules/VCA'
 import Filter from './modules/Filter'
 import Distortion from './modules/Distortion'
@@ -27,6 +28,7 @@ export default class App extends Component {
         <Sequencer steps={16} />
         <Envelope />
         <Oscilator />
+        <Noise />
         <VCA />
         <Filter />
         <Distortion />

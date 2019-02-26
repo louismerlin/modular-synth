@@ -14,6 +14,7 @@ class FrequencyControlNode {
   }
 
   update({ frequency, knob }) {
+    // TODO use a ConstantSourceNode
     if (knob) {
       const difference = knob.value - this.value
       this.value = knob.value
