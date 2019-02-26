@@ -1,0 +1,9 @@
+div.switch {
+  margin: 1mm;
+  width: 0.4cm;
+  height: 0.4cm;
+}
+
+svg.switch {
+  overflow: visible;
+}

@@ -1,6 +1,7 @@
 import { h, Component, createContext } from 'preact'
 import Clock from './modules/Clock'
 import Sequencer from './modules/Sequencer'
+import Trigger from './modules/Trigger'
 import Envelope from './modules/Envelope'
 import Oscilator from './modules/Oscilator'
 import Noise from './modules/Noise'
@@ -12,11 +13,16 @@ import './App.css'
 import CablesOverlay from './Cables';
 
 const AudioContext = window.AudioContext || window.webkitAudioContext
-const audioContext = new AudioContext()
 
+let audioContext
 export { audioContext }
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    audioContext = new AudioContext()
+  }
+
   componentWillUnmount() {
     audioContext.close()
   }
@@ -26,6 +32,7 @@ export default class App extends Component {
       <div class='rack'>
         <Clock />
         <Sequencer steps={16} />
+        <Trigger steps={16} />
         <Envelope />
         <Oscilator />
         <Noise />
