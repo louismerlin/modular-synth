@@ -61,12 +61,12 @@ export default class extends Component {
     }))
   }
 
-  render({ steps }, { currentStep, triggerNode }) {
+  render({ steps, mId }, { currentStep, triggerNode }) {
     const rows = new Array(Math.ceil(steps / 4))
     rows.fill(0)
     const { stepTrigs } = triggerNode
     return (
-      <Module hp={10}>
+      <Module hp={10} mId={mId}>
         <h2>trg</h2>
         <div class='subset'>
           {rows.map((_, i) => (

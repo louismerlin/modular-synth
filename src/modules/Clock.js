@@ -55,7 +55,6 @@ class ClockNode {
 export default class extends Component {
   constructor(props) {
     super(props)
-    this.fullName = 'Clock'
     this.state = { clockNode: {}, beep: false }
     this.beep = this.beep.bind(this)
   }
@@ -73,9 +72,9 @@ export default class extends Component {
     window.setTimeout(() => this.setState({ beep: false }), 1/30 * 1000)
   }
 
-  render(_, { clockNode, beep }) {
+  render({ mId }, { clockNode, beep }) {
     return (
-      <Module hp={6}>
+      <Module hp={6} mId={mId}>
         <h2>clk</h2>
         <Led blink={beep} color='black' />
         <div class='subset'>

@@ -29,9 +29,9 @@ export default class extends Component {
     this.setState({ vcaNode , gainNode })
   }
 
-  render(_, { vcaNode, gainNode }) {
+  render({ mId }, { vcaNode, gainNode }) {
     return (
-      <Module hp={3}>
+      <Module hp={3} mId={mId}>
         <h2>vca</h2>
         <div class='subset'>
           <h4>in</h4>

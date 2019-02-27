@@ -32,9 +32,9 @@ export default class extends Component {
     this.setState({ waveShaperNode })
   }
 
-  render(_, { waveShaperNode }) {
+  render({ mId }, { waveShaperNode }) {
     return (
-      <Module hp={3}>
+      <Module hp={3} mId={mId}>
         <h2>dis</h2>
         <div class='subset'>
           <h4>in</h4>

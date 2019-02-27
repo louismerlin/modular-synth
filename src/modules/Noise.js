@@ -27,9 +27,9 @@ export default class extends Component {
     bufferSource.start()
   }
 
-  render(_, { bufferSource }) {
+  render({ mId }, { bufferSource }) {
     return (
-      <Module hp={3}>
+      <Module hp={3} mId={mId}>
         <h2>noi</h2>
         <div class='subset'>
           <h4>out</h4>

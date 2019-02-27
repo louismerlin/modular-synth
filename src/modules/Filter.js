@@ -19,12 +19,12 @@ export default class extends Component {
     this.setState({ lowpassNode, highpassNode })
   }
 
-  render(_, { lowpassNode, highpassNode }) {
+  render({ mId }, { lowpassNode, highpassNode }) {
     const allNodes = [lowpassNode, highpassNode]
     const allFrequencies = allNodes.map(n => n.frequency)
     const allResonances = allNodes.map(n => n.Q)
     return (
-      <Module hp={6}>
+      <Module hp={6} mId={mId}>
         <h2>flt</h2>
         <div class='subset'>
           <h3>freq</h3>

@@ -43,9 +43,9 @@ export default class extends Component {
     this.setState({ envelopeNode })
   }
 
-  render(_, { envelopeNode }) {
+  render({ mId }, { envelopeNode }) {
     return (
-      <Module hp={4}>
+      <Module hp={4} mId={mId}>
         <h2>env</h2>
         <div class='subset'>
           <div class='subset'>

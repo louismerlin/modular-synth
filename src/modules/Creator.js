@@ -58,7 +58,7 @@ export default ({ addModule }) => (
       <h2>+</h2>
     </div>
     {modules.map(module => (
-      <div class='subset' onClick={() => addModule(<module.component {...module.props} />)}>
+      <div class='subset' onClick={() => addModule(<module.component {...module.props} mId={Math.random()*(Math.pow(10, 17))} />)}>
         <h5 title={module.description}>{module.name}</h5>
       </div>
     ))}

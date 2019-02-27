@@ -83,11 +83,11 @@ export default class extends Component {
     }))
   }
 
-  render({ steps }, { currentStep, sequencerNode }) {
+  render({ steps, mId }, { currentStep, sequencerNode }) {
     const rows = new Array(Math.ceil(steps / 4))
     rows.fill(0)
     return (
-      <Module hp={14}>
+      <Module hp={14} mId={mId}>
         <h2>seq</h2>
         <div class='subset'>
           {rows.map((_, i) => (
