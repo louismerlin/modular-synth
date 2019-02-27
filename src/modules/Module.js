@@ -21,8 +21,9 @@ class Screw extends Component {
   }
 }
 
+// class='module' is important !! see how cables are removed when removing module
 export default ({ children, hp, mId }) => (
-  <div class='module' style={hp ? `width:${hp * 5.08}mm` : ''}>
+  <div class='module' style={hp ? `width:${hp * 5.08}mm` : ''} mId={mId}>
     <Screw pos='top' handleClick={() => removeModule(mId)} />
     {children}
     <Screw pos='bottom' handleClick={() => removeModule(mId)} />

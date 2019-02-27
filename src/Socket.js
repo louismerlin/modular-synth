@@ -1,5 +1,5 @@
 import { h, Component } from 'preact'
-import { connect } from './Cables'
+import { connect } from './App'
 import './Socket.css'
 
 export default class extends Component {
