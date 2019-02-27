@@ -87,7 +87,7 @@ export default class extends Component {
     const rows = new Array(Math.ceil(steps / 4))
     rows.fill(0)
     return (
-      <Module>
+      <Module hp={14}>
         <h2>seq</h2>
         <div class='subset'>
           {rows.map((_, i) => (

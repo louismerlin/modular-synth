@@ -34,7 +34,7 @@ export default class extends Component {
 
   render(_, { waveShaperNode }) {
     return (
-      <Module>
+      <Module hp={3}>
         <h2>dis</h2>
         <div class='subset'>
           <h4>in</h4>

@@ -53,7 +53,7 @@ const modules = [
 ]
 
 export default ({ addModule }) => (
-  <Module>
+  <Module hp={6}>
     <div class='subset'>
       <h2>+</h2>
     </div>

@@ -45,7 +45,7 @@ export default class extends Component {
 
   render(_, { envelopeNode }) {
     return (
-      <Module>
+      <Module hp={4}>
         <h2>env</h2>
         <div class='subset'>
           <div class='subset'>

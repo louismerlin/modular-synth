@@ -24,7 +24,7 @@ export default class extends Component {
     const allFrequencies = allNodes.map(n => n.frequency)
     const allResonances = allNodes.map(n => n.Q)
     return (
-      <Module>
+      <Module hp={6}>
         <h2>flt</h2>
         <div class='subset'>
           <h3>freq</h3>

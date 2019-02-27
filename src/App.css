@@ -1,5 +1,5 @@
 html body {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #app {
@@ -11,7 +11,7 @@ html body {
   display: inline-flex;
   flex-wrap: wrap;
   position: relative;
-  max-width: 42.672cm;
+  width: 42.672cm;
   border: solid 2px black;
   margin: 0 auto;
 }

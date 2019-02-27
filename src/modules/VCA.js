@@ -31,7 +31,7 @@ export default class extends Component {
 
   render(_, { vcaNode, gainNode }) {
     return (
-      <Module>
+      <Module hp={3}>
         <h2>vca</h2>
         <div class='subset'>
           <h4>in</h4>

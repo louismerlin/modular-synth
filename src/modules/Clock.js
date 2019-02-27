@@ -75,7 +75,7 @@ export default class extends Component {
 
   render(_, { clockNode, beep }) {
     return (
-      <Module>
+      <Module hp={6}>
         <h2>clk</h2>
         <Led blink={beep} color='black' />
         <div class='subset'>

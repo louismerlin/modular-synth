@@ -29,7 +29,7 @@ export default class extends Component {
 
   render(_, { bufferSource }) {
     return (
-      <Module>
+      <Module hp={3}>
         <h2>noi</h2>
         <div class='subset'>
           <h4>out</h4>

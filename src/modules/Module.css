@@ -8,6 +8,8 @@
   border: solid 2px black;
   padding: 10px;
   height: 133.4mm;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .subset {
@@ -23,4 +25,20 @@
   flex-direction: row;
   align-items: center;
   margin: 0.2cm 0 0 0;
+}
+
+svg.screw {
+  position: absolute;
+  width: 3.2mm;
+  height: 3.2mm;
+  overflow: visible;
+  left: 0.94mm;
+}
+
+.screw.top {
+  top: 1.4mm;
+}
+
+.screw.bottom {
+  bottom: 1.4mm;
 }

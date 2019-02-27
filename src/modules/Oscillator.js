@@ -62,7 +62,7 @@ export default class extends Component {
   render(_, { sineNode, squareNode, triangleNode, sawNode, frequencyControlNode }) {
     const allFrequencies = [sineNode.frequency, squareNode.frequency, triangleNode.frequency, sawNode.frequency]
     return (
-      <Module>
+      <Module hp={6}>
         <h2>osc</h2>
         <div class='subset'>
           <h3>freq</h3>
