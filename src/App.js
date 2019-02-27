@@ -1,8 +1,9 @@
 import { h, Component, createContext } from 'preact'
 import Creator from './modules/Creator'
-import './App.css'
-import CablesOverlay from './Cables';
+import Params from './modules/Params'
 import Out from './modules/Out'
+import CablesOverlay from './Cables'
+import './App.css'
 
 const AudioContext = window.AudioContext || window.webkitAudioContext
 
@@ -12,8 +13,9 @@ export { audioContext }
 export default class App extends Component {
   constructor(props) {
     super(props)
-    this.state = { modules: [] }
+    this.state = { modules: [], hideCables: false }
     this.addModule = this.addModule.bind(this)
+    this.toggleHideCables = this.toggleHideCables.bind(this)
     audioContext = new AudioContext()
     audioContext.suspend()
   }
@@ -26,13 +28,18 @@ export default class App extends Component {
     this.setState(({ modules }) => ({ modules: modules.concat(module) }))
   }
 
-  render(_, { modules }) {
+  toggleHideCables() {
+    this.setState(({ hideCables }) => ({ hideCables: !hideCables }))
+  }
+
+  render(_, { modules, hideCables }) {
     return (
       <div class='rack'>
+        <Params hideCables={this.toggleHideCables} />
         <Creator addModule={this.addModule} />
         {modules}
         <Out />
-        <CablesOverlay />
+        <CablesOverlay hideCables={hideCables} />
       </div>
     )
   }

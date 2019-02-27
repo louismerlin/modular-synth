@@ -9,8 +9,12 @@ svg.overlay {
   pointer-events:none;
 }
 
+svg.hidden {
+  display: none;
+}
+
 line.cable {
   stroke: rgb(1, 1, 1, 0.2);
-  stroke-width: 7mm;
+  stroke-width: 5mm;
   pointer-events: all;
 }

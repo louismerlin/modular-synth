@@ -102,13 +102,15 @@ export default class extends Component {
           ))}
         </div>
         <div class='h-subset'>
-         <div class='subset'>
-            <h4>trig</h4>
-            <Socket input node={sequencerNode} />
-          </div>
-         <div class='subset'>
-            <h4>reset</h4>
-            <Socket input />
+          <div class='subset'>
+            <div class='subset'>
+                <h4>trig</h4>
+                <Socket input node={sequencerNode} />
+              </div>
+            <div class='subset'>
+              <h4>reset</h4>
+              <Socket input />
+            </div>
           </div>
           <div class='subset'>
             <h4>out</h4>

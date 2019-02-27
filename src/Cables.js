@@ -64,9 +64,10 @@ class CablesOverlay extends Component {
     disconnect(node1, node2)
   }
 
-  render(_, { cables }) {
+  render({ hideCables }, { cables }) {
+    const overlayClass = `overlay ${hideCables ? 'hidden' : ''}`
     return(
-      <svg class='overlay'>
+      <svg class={overlayClass}>
         {cables.map(({ nodes, id }) => {
           const b1 = nodes[0].component.base
           const x1 = b1.offsetLeft + b1.offsetWidth / 2 - 1
