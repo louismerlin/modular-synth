@@ -46,6 +46,7 @@ class ClockNode {
 export default class extends Component {
   constructor(props) {
     super(props)
+    this.fullName = 'Clock'
     this.state = { clockNode: {}, beep: false }
     this.beep = this.beep.bind(this)
   }

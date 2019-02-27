@@ -1,16 +1,8 @@
 import { h, Component, createContext } from 'preact'
-import Clock from './modules/Clock'
-import Sequencer from './modules/Sequencer'
-import Trigger from './modules/Trigger'
-import Envelope from './modules/Envelope'
-import Oscilator from './modules/Oscilator'
-import Noise from './modules/Noise'
-import VCA from './modules/VCA'
-import Filter from './modules/Filter'
-import Distortion from './modules/Distortion'
-import Out from './modules/Out'
+import Creator from './modules/Creator'
 import './App.css'
 import CablesOverlay from './Cables';
+import Out from './modules/Out'
 
 const AudioContext = window.AudioContext || window.webkitAudioContext
 
@@ -20,25 +12,25 @@ export { audioContext }
 export default class App extends Component {
   constructor(props) {
     super(props)
+    this.state = { modules: [] }
+    this.addModule = this.addModule.bind(this)
     audioContext = new AudioContext()
+    audioContext.suspend()
   }
 
   componentWillUnmount() {
     audioContext.close()
   }
 
-  render() {
+  addModule(module) {
+    this.setState(({ modules }) => ({ modules: modules.concat(module) }))
+  }
+
+  render(_, { modules }) {
     return (
       <div class='rack'>
-        <Clock />
-        <Sequencer steps={16} />
-        <Trigger steps={16} />
-        <Envelope />
-        <Oscilator />
-        <Noise />
-        <VCA />
-        <Filter />
-        <Distortion />
+        <Creator addModule={this.addModule} />
+        {modules}
         <Out />
         <CablesOverlay />
       </div>

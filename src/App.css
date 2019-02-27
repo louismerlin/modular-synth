@@ -2,11 +2,26 @@ html body {
   font-family: sans-serif;
 }
 
+#app {
+  width: 100%;
+  text-align: center;
+}
+
 .rack {
   display: inline-flex;
+  flex-wrap: wrap;
   position: relative;
+  max-width: 42.672cm;
+  border: solid 2px black;
+  margin: 0 auto;
 }
 
 h1, h2, h3, h4, h5 {
   margin: 2mm 0 0.5mm 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
