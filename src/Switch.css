@@ -6,4 +6,6 @@ div.switch {
 
 svg.switch {
   overflow: visible;
+  width: 0.4cm;
+  height: 0.4cm;
 }

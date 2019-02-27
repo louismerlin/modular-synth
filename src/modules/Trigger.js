@@ -67,7 +67,7 @@ export default class extends Component {
     const { stepTrigs } = triggerNode
     return (
       <Module>
-        <h2>seq</h2>
+        <h2>trg</h2>
         <div class='subset'>
           {rows.map((_, i) => (
             <div class='h-subset'>

@@ -12,7 +12,7 @@ const paramTypes = {
   },
   lfo: {
     minValue: 1/6,
-    maxValue: 6
+    maxValue: 12
   },
   filterFrequency: {
     minValue: 0,
