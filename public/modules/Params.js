@@ -1,6 +1,5 @@
-import { h } from 'preact'
 import Module from './Module'
-import Switch from '../Switch';
+import Switch from '../Switch'
 
 export default ({ hideCables }) => (
   <Module hp={6}>

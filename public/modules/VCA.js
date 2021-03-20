@@ -1,4 +1,4 @@
-import { h, Component } from 'preact'
+import { Component } from 'preact'
 import { audioContext } from '../App'
 import Module from './Module'
 import Socket from '../Socket'

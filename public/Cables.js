@@ -1,4 +1,3 @@
-import { h, Component } from 'preact'
 import './Cables.css'
 
 export default ({ hideCables, cables, removeCable }) => {

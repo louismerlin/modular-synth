@@ -1,4 +1,4 @@
-import { h, Component, createContext } from 'preact'
+import { Component } from 'preact'
 import Projects from './modules/Projects'
 import Creator from './modules/Creator'
 import Params from './modules/Params'

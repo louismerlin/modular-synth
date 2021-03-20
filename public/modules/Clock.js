@@ -1,4 +1,4 @@
-import { h, Component } from 'preact'
+import { Component } from 'preact'
 import Module from './Module'
 import Led from '../Led'
 import Knob from '../Knob'

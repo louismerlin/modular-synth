@@ -1,4 +1,3 @@
-import { h } from 'preact'
 import Module from './Module'
 import Clock from './Clock'
 import Sequencer from './Sequencer'

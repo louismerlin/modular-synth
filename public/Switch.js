@@ -1,4 +1,4 @@
-import { h, Component } from 'preact'
+import { Component } from 'preact'
 import './Switch.css'
 
 export default class Switch extends Component {
